@@ -25,7 +25,7 @@ set -e
 # FF_ALL_ARCHS_IOS="armv7 armv7s arm64 i386 x86_64"
 #export FF_ALL_ARCHS_IOS="arm64e arm64 x86_64"
 export FF_ALL_ARCHS_IOS="arm64 x86_64"
-target_ios=10.0
+target_ios=11.0
 
 # libass使用Coretext还是fontconfig;TRUE代表使用CORETEXT,FALSE代表使用fontconfig
 export USE_CORETEXT=FALSE
@@ -117,7 +117,7 @@ set_flags()
     ASM_FLAGS=
     if [ $ARCH = "x86_64" ];then
         PLATFORM="iphonesimulator"
-        CFLAGS="-arch x86_64 -march=x86-64 -msse4.2 -mpopcnt -m64 -mtune=intel"
+        CFLAGS="-arch x86_64 -march=x86-64 -msse4.2 -mpopcnt -m64"
         CFLAGS="$CFLAGS -mios-simulator-version-min=$target_ios"
         HOST=x86_64-ios-darwin
         ASM_FLAGS="--disable-asm"
@@ -405,7 +405,6 @@ do_compile_ffmpeg()
     if [ "$FF_ARCH" = "x86_64" ]; then
         NEON_FLAG=" --disable-neon"
         TARGET_CPU="x86_64"
-        TARGET_CPU="armv8"
         ARCH_OPTIONS="--disable-asm"
     elif [ "$FF_ARCH" = "arm64" ]; then
         NEON_FLAG=" --enable-neon"

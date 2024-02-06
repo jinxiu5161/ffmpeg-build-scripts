@@ -1,6 +1,6 @@
 # ffmpeg的编译
 ```
-git clone https://github.com/nldzsz/ffmpeg-build-scripts.git
+git clone https://github.com/jinxiu5161/ffmpeg-build-scripts.git
 cd ffmpeg-build-scripts
 ```
 1、for iOS
@@ -23,8 +23,6 @@ cd ffmpeg-build-scripts
 ```
 ./compile-pc.sh windows
 ```
-# 参考使用文章
-[MAC编译IOS/android的ffmpeg库(x264/fdk_aac/lamemp3)(一)](https://www.jianshu.com/p/16b14e8bb273)
 
-# 如有问题，请联系微信加入音视频技术交流群
-微信：nldzsz
+# 如有问题，请联系微信
+微信：chongzi5161
